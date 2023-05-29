@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import List from "./components/List/List";
+import ItemProvider from "./components/ItemProvider/ItemProvider";
+import { ItemContext } from "./components/ItemContext/ItemContext";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+        <div className="App">
+            <ItemProvider>
+                <ItemContext.Consumer>
+                    {({items}) => <List items={items} />}
+                </ItemContext.Consumer>
+            </ItemProvider>
+        </div>
+);
 
 export default App;
