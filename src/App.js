@@ -2,6 +2,7 @@ import List from "./components/List/List";
 import ItemProvider from "./components/ItemProvider/ItemProvider";
 import { ItemContext } from "./components/ItemContext/ItemContext";
 import DateInput from "./components/DateInput/DateInput";
+import Timer from "./components/Timer/Timer";
 import './App.css';
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
             </ItemContext.Consumer>
         </ItemProvider>
         <DateInput />
+        <Timer offTime={5}/>
     </div>
 );
 
